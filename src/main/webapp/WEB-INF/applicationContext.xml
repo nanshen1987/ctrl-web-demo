@@ -19,9 +19,24 @@
     <mvc:annotation-driven />  
     <context:component-scan base-package="com.focus.*" />  
   
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
-        <property name="prefix" value="/" />  
-        <property name="suffix" value=".jsp" />  
-    </bean>  
+   <bean id="velocityConfig"
+		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="resourceLoaderPath" value="/WEB-INF/view" />
+		<property name="configLocation" value="/WEB-INF/velocity.properties" />
+	</bean>
+
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="cache" value="true" />
+		<property name="suffix" value=".html" />
+		<property name="requestContextAttribute" value="request" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="numberToolAttribute" value="numberTool" />
+		<property name="order" value="1" />
+	</bean>
   
 </beans>  
