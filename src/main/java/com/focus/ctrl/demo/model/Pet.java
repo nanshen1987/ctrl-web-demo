@@ -1,6 +1,12 @@
 package com.focus.ctrl.demo.model;
 
-public class Pet {
+import java.io.Serializable;
+
+public class Pet implements Serializable {
+
+	public Pet() {
+		super();
+	}
 
 	private String petId;
 

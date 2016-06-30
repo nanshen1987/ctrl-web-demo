@@ -148,7 +148,12 @@
             <groupId>commons-logging</groupId>  
             <artifactId>commons-logging</artifactId>  
             <version>1.1</version>  
-        </dependency>  
+        </dependency>
+        <dependency>  
+        <groupId>org.codehaus.jackson</groupId>  
+        <artifactId>jackson-mapper-asl</artifactId>  
+        <version>1.9.8</version>  
+   		 </dependency>    
     </dependencies>  
   <build>
     <finalName>ctrl-web-demo</finalName>
