@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>displayOwner</title>
+</head>
+<body>
+name:$!{owner.ownerName}<br>
+id:$!{owner.ownerId}<br>
+<p>Pets</p>
+#set($pets=$!owner.pets)
+#foreach ($pet in $pets)
+$pet.petName
+#end
+</body>
+</html>
