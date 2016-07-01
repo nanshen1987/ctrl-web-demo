@@ -1,4 +1,4 @@
-package com.focus.ctrl.demo.web;
+package com.focus.ctrl.demo.web.reqmap;
 
 import java.util.Date;
 import java.util.Map;

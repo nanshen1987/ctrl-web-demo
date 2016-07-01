@@ -1,4 +1,4 @@
-package com.focus.ctrl.demo.web;
+package com.focus.ctrl.demo.web.reqmap;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,4 +15,13 @@ public class MediaTypeController {
 		// implementation omitted
 		System.out.println();
 	}
+
+	// @RequestMapping(value = "/media/pets/{petId}", method =
+	// RequestMethod.GET, produces = "application/json")
+	// @ResponseBody
+	// public Pet getPet(@PathVariable String petId, Model model) {
+	// // implementation omitted
+	// System.out.println();
+	// return null;
+	// }
 }
