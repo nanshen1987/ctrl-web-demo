@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,7 +44,7 @@ public class AppointmentsController {
 	}
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public Appointment getNewForm() {
+	public Appointment getNewForm(Model model) {
 		return new Appointment();
 	}
 
@@ -54,5 +55,22 @@ public class AppointmentsController {
 		}
 		appointmentBook.addAppointment(appointment);
 		return "redirect:/appointments";
+	}
+
+	@ModelAttribute
+	public void addDefaultVal(Model model) {
+		model.addAttribute("message", "@ModelAttribute Method add Message");
+		System.out.println();
+	}
+
+	@ModelAttribute
+	public Appointment addModelInAnotherWay() {
+		/**
+		 * Appointment appointment = new Appointment(); appointment.setAge(1);
+		 * appointment.setDate(new Date()); appointment.setDesc("desc");
+		 * appointment.setEvent("event"); appointment.setName("name"); return
+		 * appointment;
+		 **/
+		return new Appointment();
 	}
 }
